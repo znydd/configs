@@ -11,7 +11,8 @@ vim.o.signcolumn = "yes"
 vim.opt.smartindent = true
 vim.opt.wrap = true
 vim.o.foldlevel = 99
-vim.o.foldmethod = "indent"
+vim.o.foldmethod = "expr"
+vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.o.foldenable = true
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
@@ -24,6 +25,11 @@ vim.opt.updatetime = 50
 vim.opt.autoread = true
 vim.opt.exrc = true
 vim.opt.secure = true
+
+-- Pre-create the FileExplorer augroup. nvim-tree's netrw hijack runs
+-- `autocmd! FileExplorer *`, which raises E216 on newer Neovim unless the
+-- group already exists.
+vim.api.nvim_create_augroup("FileExplorer", { clear = false })
 
 vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter" }, {
   pattern = "*",

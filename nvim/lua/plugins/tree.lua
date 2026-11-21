@@ -10,8 +10,8 @@ return {
   },
   opts = {
     filters = {
-      custom = { ".git", "node_modules", ".vscode" },
       dotfiles = false,
+      git_ignored = false,
       git_clean = false,
     },
     git = {

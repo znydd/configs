@@ -1,8 +1,13 @@
 return {
-	"vinitkumar/oscura-vim",
+	"Mofiqul/vscode.nvim",
 	lazy = false,
 	priority = 1000,
 	config = function()
-		vim.cmd.colorscheme("oscura")
+		vim.o.background = "light"
+		require("vscode").setup({
+			style = "light",
+			transparent = false,
+		})
+		vim.cmd.colorscheme("vscode")
 	end,
 }

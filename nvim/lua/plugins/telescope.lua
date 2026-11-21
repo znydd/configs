@@ -35,5 +35,7 @@ return {
 		{ "<C-p>", "<cmd>Telescope git_files<cr>", desc = "Find files" },
 		{ "<leader>fa", "<cmd>Telescope find_files<cr>", desc = "Find all files" },
 		{ "<leader>fi", "<cmd>Telescope live_grep<cr>", desc = "Find in files" },
+		{ "<leader>fd", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = "Document diagnostics" },
+		{ "<leader>fD", "<cmd>Telescope diagnostics<cr>", desc = "Workspace diagnostics" },
 	},
 }
